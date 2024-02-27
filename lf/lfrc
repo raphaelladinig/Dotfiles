@@ -1,0 +1,14 @@
+set icons true
+set shell /bin/zsh
+
+map "$"
+
+map <enter> shell
+map . set hidden!
+map gd cd ~/Downloads
+map gD cd ~/Documents
+map gm cd /run/media
+map g/ cd /
+map R reload
+map D delete
+map x cut

@@ -1,0 +1,27 @@
+color=101011
+disable-caps-lock-text
+indicator-caps-lock
+hide-keyboard-layout
+font=CaskaydiaCove Nerd Font
+indicator-radius=150
+indicator-thickness=15
+indicator-idle-visible
+bs-hl-color=ee5396
+key-hl-color=25be6a
+inside-color=00000000
+inside-clear-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+line-color=00000000
+line-clear-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+ring-color=000000
+ring-clear-color=000000
+ring-ver-color=000000
+ring-wrong-color=000000
+separator-color=00000000
+text-color=e4e4e5
+text-clear-color=e4e4e5
+text-ver-color=e4e4e5
+text-wrong-color=e4e4e5

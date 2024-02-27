@@ -1,0 +1,71 @@
+(defpoll battery-status :interval "1s" "./scripts/battery-status.sh")
+(defpoll network-status :interval "1s" "./scripts/network-status.sh")
+(defpoll volume-level :interval "100ms" "./scripts/volume-level.sh")
+(defpoll volume-status :interval "100ms" "./scripts/volume-status.sh")
+(defpoll time :interval "1s" "date '+%H:%M:%S'")
+(deflisten workspaces :initial "[]" "./scripts/workspaces.sh")
+
+(defwidget bar []
+  (centerbox
+    :orientation "h"
+    :class "bar"
+    :height 30
+    (start)
+    (center)
+    (end)))
+
+(defwidget start []
+   (box
+    :space-evenly false
+    :halign "start"
+    :class "start"
+    (time)))
+
+(defwidget center []
+  (box
+    :halign "center"
+    :class "center"
+    :space-evenly false
+    (workspaces)))
+
+(defwidget end []
+  (box
+    :space-evenly false
+    :spacing 15
+    :class "end"
+    :halign "end"
+    (volume)
+    (network)
+    (battery)))
+
+(defwidget time []
+  (eventbox
+    :halign "center"
+    time))
+
+(defwidget workspaces []
+  (eventbox 
+    (box
+      :halign "center"
+      :valign "center"
+      (literal :content "(box :space-evenly false :spacing 15 ${workspaces})"))))
+ 
+(defwidget battery [] 
+  (eventbox
+    (box
+      :space-evenly false
+      :spacing 5
+      (label :class "icon" :text battery-status)
+      (label :text "${EWW_BATTERY.BAT0.capacity}%"))))
+
+(defwidget network []
+  (eventbox
+    (label :class "icon" :text network-status)))
+
+(defwidget volume []
+  (eventbox
+    (box
+      :space-evenly false
+      :spacing 5
+      (label :class "icon" :text volume-status)
+      (label :text "${volume-level}%"))))
