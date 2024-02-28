@@ -1,47 +1,57 @@
 return {
-	{
-		"mfussenegger/nvim-dap",
-		lazy = true,
-		dependencies = {
-			"williamboman/mason.nvim",
-			"jay-babu/mason-nvim-dap.nvim",
+	"mfussenegger/nvim-dap",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"jay-babu/mason-nvim-dap.nvim",
+		{
+			"rcarriga/nvim-dap-ui",
+			dependencies = {
+				"mfussenegger/nvim-dap",
+				"folke/neodev.nvim",
+			},
 		},
-		config = function()
-			local dap = require("dap")
-			local mason_nvim_dap = require("mason-nvim-dap")
-
-			mason_nvim_dap.setup({
-				ensure_installed = {
-				},
-				handlers = {
-					function(config)
-						mason_nvim_dap.default_setup(config)
-					end,
-				},
-			})
-
-			vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>")
-			vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>")
-		end,
+		"theHamsta/nvim-dap-virtual-text",
 	},
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"folke/neodev.nvim",
-		},
-		config = function()
-			local dapui = require("dapui")
+	config = function()
+		local dap = require("dap")
+		local dapui = require("dapui")
+		local mason_nvim_dap = require("mason-nvim-dap")
 
-			require("neodev").setup({
-				library = { plugins = { "nvim-dap-ui" }, types = true },
-			})
+		mason_nvim_dap.setup({
+			ensure_installed = {},
+			handlers = {
+				function(config)
+					mason_nvim_dap.default_setup(config)
+				end,
+			},
+		})
 
-			dapui.setup({})
+		require("nvim-dap-virtual-text").setup({})
 
-			vim.keymap.set("n", "<leader>da", function()
-				dapui.toggle({})
-			end)
-		end,
-	},
+		require("neodev").setup({
+			library = { plugins = { "nvim-dap-ui" }, types = true },
+		})
+		dapui.setup({})
+
+		dap.listeners.before.attach.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.launch.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited.dapui_config = function()
+			dapui.close()
+		end
+
+		vim.fn.sign_define(
+			"DapBreakpoint",
+			{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+		)
+
+		vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>")
+		vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>")
+	end,
 }

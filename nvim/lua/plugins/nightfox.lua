@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("nightfox").setup({
 			options = {
-				styles = {
+                styles = {
 					keyword = "italic",
 					types = "italic",
 				},
