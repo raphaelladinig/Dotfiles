@@ -16,6 +16,6 @@ return {
 				tmux = { enabled = true },
 			},
 		})
-		vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {})
+		vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 	end,
 }

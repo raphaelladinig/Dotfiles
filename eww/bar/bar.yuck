@@ -1,9 +1,10 @@
-(defpoll battery-status :interval "1s" "./scripts/battery-status.sh")
-(defpoll network-status :interval "1s" "./scripts/network-status.sh")
-(defpoll volume-level :interval "100ms" "./scripts/volume-level.sh")
-(defpoll volume-status :interval "100ms" "./scripts/volume-status.sh")
+(defpoll battery-status :interval "1s" "sh ./scripts/battery-status.sh")
+(defpoll network-status :interval "1s" "sh ./scripts/network-status.sh")
+(defpoll volume-level :interval "100ms" "sh ./scripts/volume-level.sh")
+(defpoll volume-status :interval "100ms" "sh ./scripts/volume-status.sh")
+(defpoll active-window :interval "100ms" "sh ./scripts/active-window.sh")
 (defpoll time :interval "1s" "date '+%H:%M:%S'")
-(deflisten workspaces :initial "[]" "./scripts/workspaces.sh")
+(deflisten workspaces :initial "[]" "sh ./scripts/workspaces.sh")
 
 (defwidget bar []
   (centerbox
@@ -19,14 +20,14 @@
     :space-evenly false
     :halign "start"
     :class "start"
-    (time)))
+    (workspaces)))
 
 (defwidget center []
   (box
     :halign "center"
     :class "center"
     :space-evenly false
-    (workspaces)))
+    "${active-window}"))
 
 (defwidget end []
   (box
@@ -36,12 +37,8 @@
     :halign "end"
     (volume)
     (network)
-    (battery)))
-
-(defwidget time []
-  (eventbox
-    :halign "center"
-    time))
+    (battery)
+    (time)))
 
 (defwidget workspaces []
   (eventbox 
@@ -49,7 +46,12 @@
       :halign "center"
       :valign "center"
       (literal :content "(box :space-evenly false :spacing 15 ${workspaces})"))))
- 
+
+(defwidget time []
+  (eventbox
+    :halign "center"
+    time))
+
 (defwidget battery [] 
   (eventbox
     (box

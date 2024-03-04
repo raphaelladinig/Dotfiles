@@ -16,26 +16,21 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{
-						"mode",
-						separator = { right = "" },
-						draw_empty = true,
-					},
+					"mode",
 				},
 				lualine_b = {},
-				lualine_c = { "diagnostics" },
-				lualine_x = { "branch", "diff" },
-				lualine_y = {},
+				lualine_c = {
+					"diagnostics",
+				},
+				lualine_x = {
+					"branch",
+					"diff",
+				},
+				lualine_y = {
+					"progress",
+				},
 				lualine_z = {
-					{
-						"location",
-						separator = { left = "" },
-						draw_empty = true,
-					},
-					{
-						"progress",
-						draw_empty = true,
-					},
+					"location",
 				},
 			},
 		})

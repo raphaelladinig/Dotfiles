@@ -1,3 +1,3 @@
 return {
-	"tpope/vim-dispatch",
+	"vim-projectionist",
 }

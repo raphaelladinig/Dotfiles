@@ -1,3 +1,3 @@
 return {
-    "tpope/vim-dotenv",
+	"tpope/vim-dotenv",
 }

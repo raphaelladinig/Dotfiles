@@ -10,13 +10,7 @@ return {
 		vim.g.copilot_filetypes = {
 			["*"] = false,
 			["cpp"] = true,
-			["lua"] = true,
 			["java"] = true,
-			["html"] = true,
-			["css"] = true,
-			["js"] = true,
-			["php"] = true,
-			["json"] = true,
 		}
 	end,
 }

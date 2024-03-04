@@ -5,6 +5,7 @@ fi
 bindkey "^[[3~" delete-char
 alias v="nvim"
 alias t="tmux"
+alias g="lazygit"
 
 
 autoload -Uz compinit

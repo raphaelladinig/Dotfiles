@@ -61,7 +61,7 @@ return {
                             nvim_lsp = "[LSP]",
                             luasnip = "[LuaSnip]",
                             buffer = "[Buffer]",
-                            path = "[path]",
+                            path = "[Path]",
                         },
                     })(entry, vim_item)
 

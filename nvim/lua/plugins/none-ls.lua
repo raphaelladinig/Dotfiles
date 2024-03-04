@@ -21,6 +21,6 @@ return {
 
 		null_ls.setup({})
 
-		vim.keymap.set("n", "<leader>mp", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>mp", vim.lsp.buf.format)
 	end,
 }
