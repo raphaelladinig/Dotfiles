@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
+		"nvim-treesitter/nvim-treesitter-context",
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -45,5 +46,8 @@ return {
 				enable = true,
 			},
 		})
+        require("treesitter-context").setup({
+            max_lines = 2,
+        })
 	end,
 }

@@ -9,7 +9,6 @@ return {
 		dashboard.section.header.val = "NeoVim"
 
 		dashboard.section.buttons.val = {
-			dashboard.button("o", "Oil", ":Oil<CR>"),
 			dashboard.button("c", "Create Project", ":CreateProject<CR>"),
 			dashboard.button("p", "Open Project", ":OpenProject<CR>"),
 			dashboard.button("n", "Notes", ":Neorg workspace notes<CR>"),
