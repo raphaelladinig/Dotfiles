@@ -7,14 +7,15 @@ return {
 				auto_trigger = true,
 				keymap = {
 					accept = "<C-c>",
-					next = "<C-j>",
+                    next = "<C-j>",
 					prev = "<C-k>",
 				},
 			},
 			filetypes = {
-				["cpp"] = true,
 				["vim"] = true,
 				["lua"] = true,
+				["cpp"] = true,
+                ["java"] = true,
 				["*"] = false,
 			},
 		})
