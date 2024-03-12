@@ -1,10 +1,10 @@
 return {
 	-- "raphaelladinig/nvim-projectmanager",
-	dir = "/home/raphael/Projects/nvim-projectmanager/",
+	dir = "/home/raphael/Dev/nvim-projectmanager/",
 	config = function()
 		require("projectmanager").setup({
-			default_project_dir = "/home/raphael/Projects/",
-			template_dir = "/home/raphael/Projects/templates/",
+			default_project_dir = "/home/raphael/Dev/",
+			template_dir = "/home/raphael/Dev/templates/",
 		})
 		require("telescope").load_extension("projectmanager")
 	end,
