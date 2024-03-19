@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("projectmanager").setup({
 			default_project_dir = "/home/raphael/Dev/",
-			template_dir = "/home/raphael/Dev/templates/",
+			template_dir = "/home/raphael/Templates",
 		})
 		require("telescope").load_extension("projectmanager")
 	end,

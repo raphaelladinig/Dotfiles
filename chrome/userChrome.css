@@ -26,16 +26,6 @@
   display:none !important
 }
 
-/* Removes foward/back buttons */
-#back-button, #forward-button {
-  display: none !important
-}
-
-/* Remove extensions button */
-#unified-extensions-button {
-  display: none !important
-}
-
 /* Remove icons from urlbar */ 
 /* #identity-permission-box
 */
