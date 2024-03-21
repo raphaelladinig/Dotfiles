@@ -11,6 +11,8 @@ return {
 		mason_null_ls.setup({
 			ensure_installed = {
 				"stylua",
+                "clang-format",
+                "prettier",
 			},
 			handlers = {
 				function(source_name, methods)

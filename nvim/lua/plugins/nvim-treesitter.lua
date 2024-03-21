@@ -10,8 +10,10 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
-				"vim",
 				"lua",
+                "java",
+                "cpp",
+                "norg",
 			},
 			sync_install = false,
 			highlights = {
