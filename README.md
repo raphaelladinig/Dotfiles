@@ -7,6 +7,7 @@
 - wm: hyprland
 - bar: waybar
 - terminal: kitty
+- shell: zsh
 - multiplexer: tmux
 - editor: nvim
 - notfication-daemon: mako
