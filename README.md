@@ -5,6 +5,7 @@
 ### Details
 - os: 
 - wm: hyprland
+- lockscreen: hyprlock
 - bar: waybar
 - terminal: kitty
 - shell: zsh
