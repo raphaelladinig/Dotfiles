@@ -6,5 +6,6 @@
 git clone https://github.com/raphaelladinig/dotfiles
 ```
 ```
-./dotfiles/install_script.sh
+cd dotfiles
+./install_script.sh
 ```
