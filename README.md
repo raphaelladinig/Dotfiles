@@ -2,6 +2,6 @@
   <h1>Dotfiles</h1>
 </div>
 
-```bash
+```git
 git clone https://github.com/raphaelladinig/dotfiles
 ```
