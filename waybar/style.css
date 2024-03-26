@@ -30,4 +30,5 @@ window#waybar {
 #workspaces button.active {
   border-bottom: 0.125em solid #ffffff;
   border-radius: 0;
+  margin-bottom: 0;
 }
