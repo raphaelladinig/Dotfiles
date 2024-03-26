@@ -5,4 +5,5 @@
 ```
 git clone https://github.com/raphaelladinig/dotfiles
 ```
-Instal via dots
+
+Installation via [dots](https://github.com/raphaelladinig/dots)
