@@ -13,10 +13,11 @@
     ],
     "hyprland/workspaces": {},
     "clock": {
-        "tooltip": true,
+        "tooltip": false,
         "format": "{:%H:%M}",
     },
     "battery": {
+        "tooltip": false,
         "interval": 60,
         "format": "{capacity}%",
     },
