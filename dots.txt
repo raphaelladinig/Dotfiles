@@ -1,0 +1,11 @@
+chrome /home/raphael/.mozilla/firefox/c2kt733x.default-release/
+foot /home/raphael/.config/foot 
+hypr /home/raphael/.config/hypr
+lf /home/raphael/.config/lf
+mako /home/raphael/.config/mako
+nvim /home/raphael/.config/nvim
+waybar /home/raphael/.config/waybar
+.tmux.conf /home/raphael/.tmux.conf
+.zprofile /home/raphael/.zprofile
+.zshenv /home/raphael/.zshenv
+.zshrc /home/raphael/.zshrc

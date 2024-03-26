@@ -5,7 +5,4 @@
 ```
 git clone https://github.com/raphaelladinig/dotfiles
 ```
-```
-cd dotfiles
-./install_script.sh
-```
+Instal via dots
