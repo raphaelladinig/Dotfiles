@@ -31,10 +31,3 @@ window#waybar {
   border-bottom: 0.125em solid #ffffff;
   border-radius: 0;
 }
-
-#bluetooth,
-#network,
-#wireplumber,
-#battery {
-  margin-right: 1em;
-}

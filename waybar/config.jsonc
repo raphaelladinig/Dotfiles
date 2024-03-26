@@ -9,57 +9,15 @@
         "clock"
     ],
     "modules-right": [
-        "bluetooth",
-        "network",
-        "wireplumber",
         "battery"
     ],
     "hyprland/workspaces": {},
     "clock": {
         "tooltip": true,
         "format": "{:%H:%M}",
-        "tooltip-format": "{:%Y-%m-%d}",
-    },
-    "bluetooth": {
-        "format": "",
-        "format-connected": "",
-        "tooltip-format": "{num_connections} connected",
-    },
-    "network": {
-        "format": "",
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "",
-        "format-icons": [
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
-    },
-    "wireplumber": {
-        "format": "{icon}",
-        "tooltip-format": "{node_name} ({volume}%)",
-        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-        "format-muted": "󰝟",
-        "format-icons": [
-            "󰕿",
-            "󰖀",
-            "󰕾"
-        ],
     },
     "battery": {
         "interval": 60,
-        "format": "{icon}",
-        "tooltip-format": "{capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "format": "{capacity}%",
     },
 }

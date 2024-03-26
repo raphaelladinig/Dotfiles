@@ -26,3 +26,5 @@ vim.opt.mousemodel = "extend"
 vim.opt.virtualedit = "block"
 vim.opt.ignorecase = true
 vim.opt.spelllang = "en,de"
+
+vim.api.nvim_command('autocmd VimLeave * lua vim.o.guicursor = "a:ver100"')
