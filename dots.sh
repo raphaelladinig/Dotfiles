@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v git &> /dev/null; then
     echo "Error: Git is not installed. Please install Git and try again."
@@ -10,44 +10,47 @@ if [ ! -d .git ]; then
     exit 1
 fi
 
-if [ ! -f "dots.txt" ]; then
-    echo "Error: dots.txt not found. Please create a dots.txt file with the list of dotfiles to install."
+if [ ! -f "dots.json" ]; then
+    echo "Error: dots.json not found. Please create a dots.json file with the list of dotfiles to install."
     exit 1
 fi
+
+execute_scripts() {
+    jq -r '.scripts[]' dots.json | while IFS= read -r script; do
+        sh "$dots_dir/$script"
+    done
+}
 
 dots_dir=$(pwd)
 
 link() {
-    source_dir="$dots_dir/$1"
+    source_file="$1"
     target_dir="$2"
-    ln -sfn "$source_dir" "$target_dir"
+    ln -sfn "$source_file" "$target_dir"
 }
 
 install() {
-    while IFS= read -r line; do
-        source_file=$(echo "$line" | cut -d' ' -f1)
-        target_dir=$(echo "$line" | cut -d' ' -f2)
-        link "$source_file" "$target_dir"
-    done < dots.txt
-}
-
-update() {
-    git pull
-    install
+    jq -c '.dotfiles[]' dots.json | while IFS= read -r line; do
+        source_file=$(jq -r 'keys[0]' <<< "$line")
+        target_dir=$(jq -r '.["'$source_file'"]' <<< "$line")
+        link "$dots_dir/$source_file" "$target_dir"
+    done
+    execute_scripts
 }
 
 uninstall() {
-    while IFS= read -r line; do
-        target=$(echo "$line" | cut -d' ' -f2)
+    jq -c '.dotfiles[]' dots.json | while IFS= read -r line; do
+        target=$(jq -r '.["'$(jq -r 'keys[0]' <<< "$line")'"]' <<< "$line")
         rm -r "$target"
-    done < dots.txt
+    done
 }
 
 if [ "$1" = "install" ]; then
     install
     echo "Dotfiles installed"
 elif [ "$1" = "update" ]; then
-    update
+    git pull
+    install
     echo "Dotfiles updated"
 elif [ "$1" = "uninstall" ]; then
     uninstall
