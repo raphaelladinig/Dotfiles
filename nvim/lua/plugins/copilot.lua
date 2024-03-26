@@ -11,13 +11,6 @@ return {
 					prev = "<C-k>",
 				},
 			},
-			filetypes = {
-				["vim"] = true,
-				["lua"] = true,
-				["cpp"] = true,
-                ["java"] = true,
-				["*"] = false,
-			},
 		})
 	end,
 }
