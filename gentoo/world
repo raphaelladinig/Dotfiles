@@ -35,6 +35,7 @@ net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager
 net-p2p/syncthing
+net-wireless/bluez
 sys-apps/mlocate
 sys-auth/seatd
 sys-boot/grub
