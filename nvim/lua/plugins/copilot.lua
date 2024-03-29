@@ -7,9 +7,12 @@ return {
 				auto_trigger = true,
 				keymap = {
 					accept = "<C-c>",
-                    next = "<C-j>",
+					next = "<C-j>",
 					prev = "<C-k>",
 				},
+			},
+			filetypes = {
+				["*"] = true,
 			},
 		})
 	end,
