@@ -21,7 +21,6 @@ return {
 					config = {
 						workspaces = {
 							notes = "~/Notes",
-							school = "~/School/Notes/",
 						},
 						default_workspace = "notes",
 						index = "index.norg",

@@ -12,7 +12,6 @@ return {
 			dashboard.button("c", "Create Project", ":PMCreateProject<CR>"),
 			dashboard.button("p", "Projects", ":PMProjects<CR>"),
 			dashboard.button("n", "Notes", ":Neorg workspace notes<CR>"),
-			dashboard.button("s", "School", ":Neorg workspace school<CR>"),
 			dashboard.button("l", "Lazy", ":Lazy<CR>"),
 			dashboard.button("m", "Mason", ":Mason<CR>"),
 		}
