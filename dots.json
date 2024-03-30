@@ -34,8 +34,11 @@
             ".zshrc": "/home/raphael/.zshrc"
         }
     ],
-    "scripts": [
-        "scripts/font.sh"
-    ]
+    "scripts": {
+        "install": [
+            "scripts/font.sh"
+        ],
+        "update": []
+    }
 }
 
