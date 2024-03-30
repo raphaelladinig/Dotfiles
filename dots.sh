@@ -5,13 +5,13 @@ if ! command -v git &> /dev/null; then
     exit 1
 fi
 
-if ! command -v jq &> /dev/null; then
-    echo "Error: jq is not installed. Please install jq and try again."
+if [ ! -d .git ]; then
+    echo "Error: Not a git repository. Please navigate to a valid git repository."
     exit 1
 fi
 
-if [ ! -d .git ]; then
-    echo "Error: Not a git repository. Please navigate to a valid git repository."
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is not installed. Please install jq and try again."
     exit 1
 fi
 
@@ -23,7 +23,7 @@ fi
 dots_dir=$(pwd)
 
 executeScripts() {
-    event = $1
+    event=$1
     jq -r ".scripts.$event[]" dots.json | while IFS= read -r script; do
         sh "$dots_dir/$script"
     done
@@ -36,10 +36,10 @@ link() {
 }
 
 updateLinks() {
-    jq -c '.dotfiles[]' dots.json | while IFS= read -r line; do
+    jq -c '.links[]' dots.json | while IFS= read -r line; do
         source_file=$(jq -r 'keys[0]' <<< "$line")
         target_dir=$(jq -r '.["'$source_file'"]' <<< "$line")
-        link "$dots_dir/$source_file" "$target_dir"
+        link "$dots_dir/$source_file" "$(eval echo "$target_dir")"
     done
 }
 
@@ -59,6 +59,7 @@ uninstall() {
         target=$(jq -r '.["'$(jq -r 'keys[0]' <<< "$line")'"]' <<< "$line")
         rm -r "$target"
     done
+    executeScripts "uninstall"
 }
 
 if [ "$1" = "install" ]; then
@@ -75,3 +76,4 @@ else
     echo "Usage: ./dots.sh [install|update|uninstall]"
     exit 1
 fi
+

@@ -1,44 +1,45 @@
 {
-    "dotfiles": [
+    "links": [
         {
-            "chrome": "/home/raphael/.mozilla/firefox/c2kt733x.default-release/"
+            "chrome": "$HOME/.mozilla/firefox/c2kt733x.default-release/"
         },
         {
-            "foot": "/home/raphael/.config/foot"
+            "foot": "$HOME/.config/foot"
         },
         {
-            "hypr": "/home/raphael/.config/hypr"
+            "hypr": "$HOME/.config/hypr"
         },
         {
-            "lf": "/home/raphael/.config/lf"
+            "lf": "$HOME/.config/lf"
         },
         {
-            "mako": "/home/raphael/.config/mako"
+            "mako": "$HOME/.config/mako"
         },
         {
-            "nvim": "/home/raphael/.config/nvim"
+            "nvim": "$HOME/.config/nvim"
         },
         {
-            "waybar": "/home/raphael/.config/waybar"
+            "waybar": "$HOME/.config/waybar"
         },
         {
-            ".tmux.conf": "/home/raphael/.tmux.conf"
+            ".tmux.conf": "$HOME/.tmux.conf"
         },
         {
-            ".zprofile": "/home/raphael/.zprofile"
+            ".zprofile": "$HOME/.zprofile"
         },
         {
-            ".zshenv": "/home/raphael/.zshenv"
+            ".zshenv": "$HOME/.zshenv"
         },
         {
-            ".zshrc": "/home/raphael/.zshrc"
+            ".zshrc": "$HOME/.zshrc"
         }
     ],
     "scripts": {
         "install": [
             "scripts/font.sh"
         ],
-        "update": []
+        "update": [],
+        "uninstall": []
     }
 }
 
