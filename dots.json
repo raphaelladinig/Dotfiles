@@ -1,46 +1,58 @@
 {
-    "links": [
-        {
-            "chrome": "$HOME/.mozilla/firefox/c2kt733x.default-release/"
-        },
-        {
-            "foot": "$HOME/.config/foot"
-        },
-        {
-            "hypr": "$HOME/.config/hypr"
-        },
-        {
-            "lf": "$HOME/.config/lf"
-        },
-        {
-            "mako": "$HOME/.config/mako"
-        },
-        {
-            "nvim": "$HOME/.config/nvim"
-        },
-        {
-            "waybar": "$HOME/.config/waybar"
-        },
-        {
-            ".tmux.conf": "$HOME/.tmux.conf"
-        },
-        {
-            ".zprofile": "$HOME/.zprofile"
-        },
-        {
-            ".zshenv": "$HOME/.zshenv"
-        },
-        {
-            ".zshrc": "$HOME/.zshrc"
-        }
-    ],
-    "scripts": {
-        "install": [
-            "scripts/font.sh",
-            "scripts/cursor.sh"
-        ],
-        "update": [],
-        "uninstall": []
+  "dependencies": {
+    "Bibata-Modern-Ice": {
+      "url": "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.6/Bibata-Modern-Ice.tar.xz",
+      "install_path": "cursors/"
+    },
+    "CaskaydiaCove": {
+      "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip",
+      "install_path": "fonts/"
     }
+  },
+  "links": [
+    {
+      "chrome": "$HOME/.mozilla/firefox/c2kt733x.default-release/"
+    },
+    {
+      "foot": "$HOME/.config/foot"
+    },
+    {
+      "hypr": "$HOME/.config/hypr"
+    },
+    {
+      "lf": "$HOME/.config/lf"
+    },
+    {
+      "mako": "$HOME/.config/mako"
+    },
+    {
+      "nvim": "$HOME/.config/nvim"
+    },
+    {
+      "waybar": "$HOME/.config/waybar"
+    },
+    {
+      ".tmux.conf": "$HOME/.tmux.conf"
+    },
+    {
+      ".zprofile": "$HOME/.zprofile"
+    },
+    {
+      ".zshenv": "$HOME/.zshenv"
+    },
+    {
+      ".zshrc": "$HOME/.zshrc"
+    },
+    {
+      "fonts/CaskaydiaCove": "$HOME/.local/share/fonts/CaskaydiaCove"
+    },
+    {
+      "cursors/Bibata-Modern-Ice": "$HOME/.local/share/icons/Bibata-Modern-Ice"
+    }
+  ],
+  "scripts": {
+    "install": [],
+    "update": [],
+    "uninstall": []
+  }
 }
-
