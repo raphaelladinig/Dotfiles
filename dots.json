@@ -36,7 +36,8 @@
     ],
     "scripts": {
         "install": [
-            "scripts/font.sh"
+            "scripts/font.sh",
+            "scripts/cursor.sh"
         ],
         "update": [],
         "uninstall": []
