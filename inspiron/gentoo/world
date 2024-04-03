@@ -16,7 +16,9 @@ app-misc/nwg-look
 app-misc/tmux
 app-portage/gentoolkit
 app-shells/zsh
+dev-db/sqlite
 dev-embedded/platformio
+dev-java/gradle-bin
 dev-vcs/git
 dev-vcs/lazygit
 gui-apps/foot
@@ -25,6 +27,7 @@ gui-apps/hyprlock
 gui-apps/mako
 gui-apps/slurp
 gui-apps/waybar
+gui-libs/hyprcursor
 gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
 media-libs/libpulse
@@ -34,15 +37,16 @@ media-video/wireplumber
 net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager
-net-p2p/syncthing
 net-wireless/bluez
 sys-apps/mlocate
+sys-auth/polkit
 sys-auth/seatd
 sys-boot/grub
 sys-boot/os-prober
 sys-fs/ntfs3g
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
+sys-power/acpid
 sys-power/powertop
 sys-power/suspend
 sys-power/tlp
