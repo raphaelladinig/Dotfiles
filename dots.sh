@@ -111,6 +111,7 @@ install() {
 # Update dotfiles
 update() {
     echo -e "${GREEN}Updating dotfiles.${NC}"
+    git pull
     executeScripts "update"
     updateLinks
     echo -e "${GREEN}Dotfiles updated.${NC}"
