@@ -16,12 +16,12 @@ app-misc/nwg-look
 app-misc/tmux
 app-portage/gentoolkit
 app-shells/zsh
+dev-db/mariadb
 dev-db/sqlite
 dev-embedded/platformio
 dev-java/gradle-bin
 dev-vcs/git
 dev-vcs/lazygit
-gui-apps/foot
 gui-apps/grim
 gui-apps/hyprlock
 gui-apps/mako
@@ -55,3 +55,4 @@ sys-process/htop
 www-client/firefox-bin
 x11-libs/libnotify
 x11-misc/xdg-user-dirs
+x11-terms/kitty
