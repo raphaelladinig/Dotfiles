@@ -14,7 +14,7 @@
       "chrome": "$HOME/.mozilla/firefox/c2kt733x.default-release/"
     },
     {
-      "foot": "$HOME/.config/foot"
+      "kitty": "$HOME/.config/kitty"
     },
     {
       "hypr": "$HOME/.config/hypr"

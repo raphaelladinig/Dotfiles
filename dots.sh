@@ -111,8 +111,6 @@ install() {
 # Update dotfiles
 update() {
     echo -e "${GREEN}Updating dotfiles.${NC}"
-    git pull
-    installDependencies
     executeScripts "update"
     updateLinks
     echo -e "${GREEN}Dotfiles updated.${NC}"
@@ -143,7 +141,5 @@ case "$1" in
     *)
         echo -e "${RED}Invalid argument${NC}"
         echo -e "${YELLOW}Usage: ./dots.sh [install|update|uninstall]${NC}"
-        exit 1
         ;;
 esac
-
