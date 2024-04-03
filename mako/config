@@ -1,6 +1,6 @@
 default-timeout=5000
 layer=overlay
-anchor=bottom-right
+anchor=top-right
 actions=0
 icons=0
 
@@ -10,4 +10,4 @@ text-color=#ffffff
 border-radius=5
 border-color=#ffffff
 outer-margin=5
-margin=5, 0, 0, 0
+margin=1, 1, 5, 0
