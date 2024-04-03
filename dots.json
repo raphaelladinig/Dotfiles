@@ -29,9 +29,6 @@
       "nvim": "$HOME/.config/nvim"
     },
     {
-      "waybar": "$HOME/.config/waybar"
-    },
-    {
       ".tmux.conf": "$HOME/.tmux.conf"
     },
     {
