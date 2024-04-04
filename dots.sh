@@ -5,25 +5,15 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
-# Check if Git is installed
-if ! command -v git &> /dev/null; then
-    echo -e "${RED}Error: Git is not installed. Please install Git and try again.${NC}"
-    exit 1
-fi
-
-echo -e "${GREEN}Git is installed.${NC}"
-
-# Check if current directory is a Git repository
-if [ ! -d .git ]; then
-    echo -e "${RED}Error: Not a git repository. Please navigate to a valid git repository.${NC}"
-    exit 1
-fi
-
-echo -e "${GREEN}Current directory is a Git repository.${NC}"
-
 # Check if jq is installed
 if ! command -v jq &> /dev/null; then
     echo -e "${RED}Error: jq is not installed. Please install jq and try again.${NC}"
+    exit 1
+fi
+
+# Check if curl is installed
+if ! command -v curl &> /dev/null; then
+    echo -e "${RED}Error: curl is not installed. Please install curl and try again.${NC}"
     exit 1
 fi
 
