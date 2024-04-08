@@ -5,7 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.api.nvim_set_option("conceallevel", 3)
 
-vim.opt.cursorline = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.wrap = false

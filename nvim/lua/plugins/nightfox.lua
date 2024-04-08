@@ -1,5 +1,6 @@
 return {
-	"EdenEast/nightfox.nvim",
+	-- "EdenEast/nightfox.nvim",
+    dir = "/home/raphael/Dev/nightfox.nvim",
 	priority = 1000,
 	config = function()
 		require("nightfox").setup({
