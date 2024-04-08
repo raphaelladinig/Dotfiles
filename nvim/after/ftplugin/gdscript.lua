@@ -1,3 +1,5 @@
+vim.bo.expandtab = false
+
 local dap = require('dap')
 
 dap.adapters.godot = {
