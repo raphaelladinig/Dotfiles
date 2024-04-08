@@ -29,11 +29,11 @@ return {
 				"lua_ls",
 				"jdtls",
 				"clangd",
-                "dockerls",
-                "docker_compose_language_service",
+				"dockerls",
+				"docker_compose_language_service",
 				"html",
 				"cssls",
-                "tailwindcss",
+				"tailwindcss",
 				"tsserver",
 				"emmet_language_server",
 			},
@@ -52,6 +52,8 @@ return {
 
 			["jdtls"] = function() end, -- this is handled via nvim-jtdls
 		})
+
+		lspconfig.gdscript.setup({}) -- godot
 
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
