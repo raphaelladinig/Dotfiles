@@ -26,11 +26,12 @@ gui-apps/grim
 gui-apps/hyprlock
 gui-apps/mako
 gui-apps/slurp
-gui-apps/waybar
 gui-libs/hyprcursor
 gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
 media-libs/libpulse
+media-libs/mesa
+media-libs/vulkan-loader
 media-sound/pulsemixer
 media-video/pipewire
 media-video/wireplumber
@@ -46,6 +47,7 @@ sys-boot/os-prober
 sys-fs/ntfs3g
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
+sys-power/acpi
 sys-power/acpid
 sys-power/powertop
 sys-power/suspend
