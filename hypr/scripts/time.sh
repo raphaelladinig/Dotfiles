@@ -1,3 +1,3 @@
 #!/bin/sh
 
-notify-send " $(date +"%I:%M %p")"
+notify-send " $(date +"%H:%M")"
