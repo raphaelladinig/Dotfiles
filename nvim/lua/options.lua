@@ -3,8 +3,6 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- vim.api.nvim_set_option("conceallevel", 3)
-
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.wrap = false
@@ -33,3 +31,5 @@ augroup CursorLine
   autocmd WinLeave * setlocal nocursorline
 augroup END
 ]]
+
+-- vim.api.nvim_set_option("conceallevel", 3)
