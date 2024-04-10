@@ -15,13 +15,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>e", "<cmd>Telescope diagnostics bufnr=0<CR>")
-    vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-    vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>")
-    vim.keymap.set("n", "<leader>gD", "<cmd>Lspsaga goto_definition<CR>")
-    vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
-    vim.keymap.set("n", "<leader>k", "<cmd>Lspsaga hover_doc<CR>")
-
-    require('jdtls.dap').setup_dap_main_class_configs()
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.declaration)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+    vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover)
+    require("jdtls.dap").setup_dap_main_class_configs()
 end
 
 local config = {
