@@ -3,7 +3,7 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.api.nvim_set_option("conceallevel", 3)
+-- vim.api.nvim_set_option("conceallevel", 3)
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
@@ -25,3 +25,11 @@ vim.opt.mousemodel = "extend"
 vim.opt.virtualedit = "block"
 vim.opt.ignorecase = true
 vim.opt.spelllang = "en,de"
+
+vim.cmd[[
+augroup CursorLine
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+]]
