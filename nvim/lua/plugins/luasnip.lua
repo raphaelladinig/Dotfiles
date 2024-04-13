@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 	},
-	init = function()
+	config = function()
 		require("luasnip").setup({})
 		require("luasnip.loaders.from_vscode").lazy_load()
 	end,
