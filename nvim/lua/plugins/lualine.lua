@@ -10,9 +10,6 @@ return {
 				section_separators = "",
 				component_separators = "|",
 				globalstatus = true,
-				disabled_filetypes = {
-					"alpha",
-				},
 			},
 			sections = {
 				lualine_a = {
@@ -30,8 +27,17 @@ return {
 					"progress",
 				},
 				lualine_z = {
-					"location",
+					"filename",
 				},
+			},
+			tabline = {
+				lualine_c = {
+					{
+						"datetime",
+						style = "%H:%M",
+					},
+				},
+				lualine_x = { "tabs" },
 			},
 		})
 	end,
