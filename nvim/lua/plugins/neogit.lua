@@ -7,5 +7,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"ibhagwan/fzf-lua",
 	},
-    opts = {},
+	config = function()
+		require("neogit").setup({})
+	end,
 }

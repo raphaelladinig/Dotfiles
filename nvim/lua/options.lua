@@ -20,11 +20,3 @@ vim.opt.mousemodel = "extend"
 vim.opt.virtualedit = "block"
 vim.opt.ignorecase = true
 vim.opt.spelllang = "en,de"
-
-vim.cmd[[
-augroup CursorLine
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
-]]

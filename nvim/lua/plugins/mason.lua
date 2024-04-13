@@ -1,13 +1,35 @@
 return {
 	"williamboman/mason.nvim",
-	opts = {
-		ui = {
-			border = "rounded",
-			icons = {
-				package_installed = "✓",
-				package_pending = "➜",
-				package_uninstalled = "✗",
-			},
-		},
+	dependencies = {
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
+	config = function()
+		require("mason").setup({
+			ui = {
+				border = "rounded",
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
+
+		require("mason-tool-installer").setup({
+			ensure_installed = {
+				"lua-language-server",
+				"stylua",
+				"clangd",
+				"clang-format",
+				"codelldb",
+				"jdtls",
+				"java-debug-adapter",
+				"java-test",
+				"html-lsp",
+				"css-lsp",
+				"typescript-language-server",
+				"prettier",
+			},
+		})
+	end,
 }

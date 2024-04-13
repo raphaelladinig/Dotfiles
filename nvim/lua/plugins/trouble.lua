@@ -1,5 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	branch = "dev",
-	opts = {},
+	config = function()
+		require("trouble").setup({})
+	end,
 }

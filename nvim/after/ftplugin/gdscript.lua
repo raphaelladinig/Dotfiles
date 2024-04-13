@@ -2,6 +2,8 @@ vim.bo.expandtab = false
 
 local dap = require("dap")
 
+require("lspconfig").gdscript.setup({})
+
 dap.adapters.godot = {
 	type = "server",
 	host = "127.0.0.1",

@@ -1,6 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
@@ -10,8 +9,16 @@ return {
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"lua",
+				"cpp",
+				"java",
+				"css",
+				"html",
+				"javascript",
 			},
-			sync_install = false,
+			auto_install = false,
+			sync_install = true,
+			ignore_install = {},
+			modules = {},
 			highlights = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
@@ -44,8 +51,8 @@ return {
 				enable = true,
 			},
 		})
-        require("treesitter-context").setup({
-            max_lines = 2,
-        })
+		require("treesitter-context").setup({
+			max_lines = 2,
+		})
 	end,
 }

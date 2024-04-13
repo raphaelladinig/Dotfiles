@@ -26,7 +26,7 @@ local config = {
 	cmd = { vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/bin/jdtls") },
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = jdtls.setup.find_root({ ".git", "mvnw" }),
+	root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradle" }),
 	init_options = {
 		bundles = bundles,
 	},
