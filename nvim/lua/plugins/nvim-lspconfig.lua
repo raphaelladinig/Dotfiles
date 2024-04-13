@@ -28,11 +28,11 @@ return {
 
 		lspconfig.clangd.setup({
 			on_attach = on_attach,
-			capabilities = function()
-				local capabilities = vim.lsp.protocol.make_client_capabilities()
-				capabilities = require("cmp_nvim_lsp").default_capabilities()
-				capabilities.offsetEncoding = { "utf-16" }
-			end,
+			capabilities = capabilities,
+			cmd = {
+				"clangd",
+				"--offset-encoding=utf-16",
+			},
 		})
 
 		lspconfig.html.setup({
