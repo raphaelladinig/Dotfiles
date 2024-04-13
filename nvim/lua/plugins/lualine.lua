@@ -3,8 +3,7 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
-	config = function()
-		require("lualine").setup({
+    opts = {
 			options = {
 				theme = "auto",
 				section_separators = "",
@@ -33,6 +32,5 @@ return {
 					"location",
 				},
 			},
-		})
-	end,
+    }
 }

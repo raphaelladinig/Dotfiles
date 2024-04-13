@@ -13,7 +13,6 @@ return {
         "theHamsta/nvim-dap-virtual-text",
     },
     config = function()
-        local dap = require("dap")
         local dapui = require("dapui")
         local mason_nvim_dap = require("mason-nvim-dap")
 

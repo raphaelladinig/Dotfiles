@@ -10,9 +10,6 @@ return {
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"lua",
-                "java",
-                "cpp",
-                "norg",
 			},
 			sync_install = false,
 			highlights = {
