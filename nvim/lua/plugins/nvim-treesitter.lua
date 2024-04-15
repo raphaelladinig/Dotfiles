@@ -17,12 +17,13 @@ return {
 				"css",
 				"html",
 				"javascript",
+				"gdscript",
 			},
 			auto_install = false,
 			sync_install = true,
 			ignore_install = {},
 			modules = {},
-			highlights = {
+			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
 			},
