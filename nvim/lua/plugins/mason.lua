@@ -29,6 +29,9 @@ return {
 				"css-lsp",
 				"typescript-language-server",
 				"prettier",
+				"pyright",
+				"debugpy",
+				"black",
 			},
 		})
 	end,

@@ -18,6 +18,7 @@ return {
 				"html",
 				"javascript",
 				"gdscript",
+				"python",
 			},
 			auto_install = false,
 			sync_install = true,
