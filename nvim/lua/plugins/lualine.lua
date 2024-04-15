@@ -31,13 +31,13 @@ return {
 				},
 			},
 			tabline = {
-				lualine_c = {
+				lualine_a = {
 					{
 						"datetime",
 						style = "%H:%M",
 					},
 				},
-				lualine_x = { "tabs" },
+				lualine_z = { "tabs" },
 			},
 		})
 	end,
