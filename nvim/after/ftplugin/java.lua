@@ -1,14 +1,14 @@
 local jdtls = require("jdtls")
-
+local data_dir = vim.fn.stdpath("data")
 local bundles = {
 	vim.fn.glob(
-		"~/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.50.0.jar",
+		data_dir .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.50.0.jar",
 		1
 	),
 }
 vim.list_extend(
 	bundles,
-	vim.split(vim.fn.glob("~/.local/share/nvim/mason/packages/java-test/extension/server/*.jar", 1), "\n")
+	vim.split(vim.fn.glob(data_dir .. "/mason/packages/java-test/extension/server/*.jar", 1), "\n")
 )
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -23,7 +23,7 @@ local on_attach = function(client, bufnr)
 end
 
 local config = {
-	cmd = { vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/bin/jdtls") },
+	cmd = { vim.fn.expand(data_dir .. "/mason/packages/jdtls/bin/jdtls") },
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradle" }),

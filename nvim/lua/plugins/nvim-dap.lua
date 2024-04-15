@@ -9,10 +9,12 @@ return {
 			},
 		},
 		"theHamsta/nvim-dap-virtual-text",
+		"mfussenegger/nvim-dap-python",
 	},
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
+		local data_dir = vim.fn.stdpath("data")
 
 		require("nvim-dap-virtual-text").setup({})
 		require("neodev").setup({
@@ -25,7 +27,7 @@ return {
 			port = "13000",
 			host = "127.0.0.1",
 			executable = {
-				command = "/home/raphael/.local/share/nvim/mason/packages/codelldb/codelldb",
+				command = data_dir .. "/mason/packages/codelldb/codelldb",
 				args = { "--port", "13000" },
 			},
 		}
@@ -33,6 +35,8 @@ return {
 		require("dap.ext.vscode").load_launchjs("./launch.json")
 
 		dap.configurations.cpp = dap.configurations.codelldb
+
+		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
 
 		dap.adapters.godot = {
 			type = "server",
