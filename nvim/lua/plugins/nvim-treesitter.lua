@@ -17,6 +17,8 @@ return {
 				"css",
 				"html",
 				"javascript",
+				"typescript",
+				"json",
 				"gdscript",
 				"python",
 			},

@@ -27,6 +27,7 @@ return {
 				"java-test",
 				"html-lsp",
 				"css-lsp",
+				"emmet-language-server",
 				"typescript-language-server",
 				"prettier",
 				"pyright",
