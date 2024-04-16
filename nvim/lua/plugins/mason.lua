@@ -32,6 +32,7 @@ return {
 				"pyright",
 				"debugpy",
 				"black",
+				"intelephense",
 			},
 		})
 	end,
