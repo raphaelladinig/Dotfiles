@@ -7,6 +7,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				cpp = { "clang-format" },
+				java = { "clang-format" },
 				html = { "prettier" },
 				css = { "prettier" },
 				javascript = { "prettier" },
