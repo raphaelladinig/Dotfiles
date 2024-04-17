@@ -40,6 +40,11 @@ return {
 			capabilities = capabilities,
 		})
 
+		lspconfig.emmet_language_server.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
 		lspconfig.cssls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -61,11 +66,6 @@ return {
 		})
 
 		lspconfig.intelephense.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		lspconfig.emmet_language_server.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
