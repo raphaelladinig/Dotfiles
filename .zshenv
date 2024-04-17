@@ -1,2 +1,2 @@
 export EDITOR=nvim
-export BROWSER=firefox-developer-edition
+export BROWSER=firefox-bin
