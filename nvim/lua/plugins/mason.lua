@@ -27,6 +27,7 @@ return {
 				"java-test",
 				"html-lsp",
 				"css-lsp",
+				"tailwindcss-language-server",
 				"emmet-language-server",
 				"typescript-language-server",
 				"prettier",
