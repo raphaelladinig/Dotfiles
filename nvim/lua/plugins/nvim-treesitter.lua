@@ -18,6 +18,7 @@ return {
 				"html",
 				"javascript",
 				"typescript",
+				"tsx",
 				"json",
 				"gdscript",
 				"python",
@@ -54,12 +55,10 @@ return {
 					include_surrounding_whitespace = true,
 				},
 			},
-			autotag = {
-				enable = true,
-			},
 		})
 		require("treesitter-context").setup({
 			max_lines = 2,
 		})
+		require("nvim-ts-autotag").setup({})
 	end,
 }
