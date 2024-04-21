@@ -3,5 +3,7 @@ return {
 	branch = "dev",
 	config = function()
 		require("trouble").setup({})
+
+		vim.keymap.set("n", "<leader>t", "<cmd>Trouble<cr>")
 	end,
 }
