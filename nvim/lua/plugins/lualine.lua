@@ -15,29 +15,22 @@ return {
 				lualine_a = {
 					"mode",
 				},
-				lualine_b = {},
+				lualine_b = {
+					"progress",
+				},
 				lualine_c = {
 					"diagnostics",
 				},
 				lualine_x = {
-					"branch",
 					"diff",
+					"branch",
 				},
 				lualine_y = {
-					"progress",
-				},
-				lualine_z = {
 					"filename",
 				},
-			},
-			tabline = {
-				lualine_a = {
-					{
-						"datetime",
-						style = "%H:%M",
-					},
+				lualine_z = {
+					"tabs",
 				},
-				lualine_z = { "tabs" },
 			},
 		})
 	end,
