@@ -29,7 +29,10 @@ return {
 					"filename",
 				},
 				lualine_z = {
-					"tabs",
+					{
+						"tabs",
+						use_mode_colors = true,
+					},
 				},
 			},
 		})
