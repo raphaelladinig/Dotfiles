@@ -5,6 +5,7 @@ alias v="nvim"
 alias t="tmux"
 alias g="lazygit"
 alias p="pulsemixer"
+alias b="bluetuith"
 
 autoload -Uz compinit
 compinit
