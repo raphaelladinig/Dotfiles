@@ -7,10 +7,10 @@ app-editors/neovim
 app-emulation/libvirt
 app-emulation/qemu
 app-emulation/virt-manager
+app-emulation/virtiofsd
 app-eselect/eselect-repository
 app-misc/brightnessctl
 app-misc/cliphist
-app-misc/lf
 app-misc/neofetch
 app-misc/nwg-look
 app-misc/tmux
@@ -19,6 +19,7 @@ app-shells/zsh
 dev-db/mariadb
 dev-db/sqlite
 dev-embedded/platformio
+dev-games/aseprite
 dev-java/gradle-bin
 dev-vcs/git
 dev-vcs/lazygit
@@ -38,8 +39,10 @@ media-video/wireplumber
 net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager
+net-wireless/bluetuith
 net-wireless/bluez
 sys-apps/mlocate
+sys-apps/ripgrep
 sys-auth/polkit
 sys-auth/seatd
 sys-boot/grub
