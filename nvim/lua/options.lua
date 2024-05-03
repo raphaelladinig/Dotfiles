@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.showtabline = 0
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.splitright = true
