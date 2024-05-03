@@ -20,7 +20,6 @@ dev-db/mariadb
 dev-db/sqlite
 dev-embedded/platformio
 dev-games/aseprite
-dev-java/gradle-bin
 dev-vcs/git
 dev-vcs/lazygit
 gui-apps/grim
