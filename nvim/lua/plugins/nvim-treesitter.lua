@@ -13,7 +13,6 @@ return {
 				"markdown",
 				"markdown_inline",
 				"cpp",
-				"java",
 				"css",
 				"html",
 				"javascript",

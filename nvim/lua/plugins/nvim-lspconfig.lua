@@ -69,10 +69,5 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
-
-		lspconfig.intelephense.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
 	end,
 }

@@ -22,9 +22,6 @@ return {
 				"clangd",
 				"clang-format",
 				"codelldb",
-				"jdtls",
-				"java-debug-adapter",
-				"java-test",
 				"html-lsp",
 				"css-lsp",
 				"tailwindcss-language-server",
@@ -34,7 +31,6 @@ return {
 				"pyright",
 				"debugpy",
 				"black",
-				"intelephense",
 			},
 		})
 	end,
