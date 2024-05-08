@@ -11,6 +11,9 @@
   },
   "links": [
     {
+      "bluetuith": "$HOME/.config/bluetuith"
+    },
+    {
       "chrome": "$HOME/.mozilla/firefox/c2kt733x.default-release/"
     },
     {
