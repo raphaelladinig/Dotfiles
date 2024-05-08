@@ -15,6 +15,7 @@ return {
 				json = { "prettier" },
 				markdown = { "prettier" },
 				python = { "black" },
+                sql = { "sql_formatter" },
 			},
 		})
 

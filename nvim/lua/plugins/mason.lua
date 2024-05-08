@@ -31,7 +31,8 @@ return {
 				"pyright",
 				"debugpy",
 				"black",
-                "sqls",
+				"sqls",
+				"sql-formatter",
 			},
 		})
 	end,
