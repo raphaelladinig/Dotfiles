@@ -35,9 +35,6 @@
       ".zprofile": "$HOME/.zprofile"
     },
     {
-      ".zshenv": "$HOME/.zshenv"
-    },
-    {
       ".zshrc": "$HOME/.zshrc"
     },
     {
