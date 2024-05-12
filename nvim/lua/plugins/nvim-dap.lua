@@ -44,9 +44,20 @@ return {
 			args = { "debug_adapter" },
 		}
 
-		require("dap.ext.vscode").load_launchjs("./launch.json")
+		dap.adapters.kotlin = {
+			type = "executable",
+			command = "kotlin-debug-adapter",
+			options = { auto_continue_if_many_stopped = false },
+		}
 
-		dap.configurations.cpp = dap.configurations.codelldb
+		dap.configurations.cpp = {
+			{
+				type = "codelldb",
+				request = "launch",
+				name = "default",
+				program = "${workspaceFolder}/main",
+			},
+		}
 
 		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
 
@@ -66,6 +77,25 @@ return {
 				cwd = "${workspaceFolder}",
 			},
 		}
+
+		dap.configurations.kotlin = {
+			{
+				type = "kotlin",
+				request = "launch",
+				name = "Launch kotlin",
+				mainClass = function()
+					local root = vim.fs.find("src", { path = vim.uv.cwd(), upward = true, stop = vim.env.HOME })[1]
+						or ""
+					local fname = vim.api.nvim_buf_get_name(0)
+					return fname:gsub(root, ""):gsub("main/kotlin/", ""):gsub(".kt", "Kt"):gsub("/", "."):sub(2, -1)
+				end,
+				projectRoot = "${workspaceFolder}",
+				jsonLogFile = "",
+				enableJsonLogging = false,
+			},
+		}
+
+		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
 
 		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
 		vim.keymap.set("n", "<leader>d", function()

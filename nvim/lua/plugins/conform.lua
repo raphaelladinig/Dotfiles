@@ -18,6 +18,7 @@ return {
 				sql = { "sql_formatter" },
 				dart = { "dart_format" },
 				java = { "clang-format" },
+				kotlin = { "ktfmt" },
 			},
 		})
 
