@@ -32,11 +32,40 @@ return {
 			},
 		}
 
+		dap.adapters.dart = {
+			type = "executable",
+			command = "dart",
+			args = { "debug_adapter" },
+		}
+
+		dap.adapters.flutter = {
+			type = "executable",
+			command = "flutter",
+			args = { "debug_adapter" },
+		}
+
 		require("dap.ext.vscode").load_launchjs("./launch.json")
 
 		dap.configurations.cpp = dap.configurations.codelldb
 
 		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
+
+		dap.configurations.dart = {
+			{
+				type = "dart",
+				request = "launch",
+				name = "Launch dart",
+				program = "${workspaceFolder}/lib/main.dart",
+				cwd = "${workspaceFolder}",
+			},
+			{
+				type = "flutter",
+				request = "launch",
+				name = "Launch flutter",
+				program = "${workspaceFolder}/lib/main.dart",
+				cwd = "${workspaceFolder}",
+			},
+		}
 
 		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
 		vim.keymap.set("n", "<leader>d", function()
