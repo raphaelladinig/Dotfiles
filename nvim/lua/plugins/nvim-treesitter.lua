@@ -24,6 +24,7 @@ return {
 				"dart",
 				"java",
 				"bash",
+                "kotlin",
 			},
 			auto_install = false,
 			sync_install = true,
