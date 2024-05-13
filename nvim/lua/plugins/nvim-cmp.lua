@@ -8,12 +8,6 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
 		"onsails/lspkind.nvim",
-		{
-			"MattiasMTS/cmp-dbee",
-			dependencies = {
-				{ "kndndrj/nvim-dbee" },
-			},
-		},
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -56,7 +50,6 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
-				{ name = "cmp-dbee" },
 			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
