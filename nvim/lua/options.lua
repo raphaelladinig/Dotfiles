@@ -21,3 +21,5 @@ vim.opt.mousemodel = "extend"
 vim.opt.virtualedit = "block"
 vim.opt.ignorecase = true
 vim.opt.spelllang = "en,de"
+vim.opt.wrap = true
+vim.opt.linebreak = true
