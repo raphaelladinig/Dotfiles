@@ -25,7 +25,6 @@ return {
 				"java",
 				"bash",
 				"kotlin",
-				"sql",
 			},
 			auto_install = false,
 			sync_install = true,
