@@ -22,3 +22,4 @@ vim.opt.virtualedit = "block"
 vim.opt.ignorecase = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
+vim.opt.spelllang = "en,de"
