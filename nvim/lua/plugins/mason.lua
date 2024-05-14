@@ -31,8 +31,6 @@ return {
 				"pyright",
 				"debugpy",
 				"black",
-				"sqls",
-				"sql-formatter",
                 "jdtls",
                 "java-debug-adapter",
                 "java-test",

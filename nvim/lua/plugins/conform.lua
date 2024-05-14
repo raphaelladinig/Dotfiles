@@ -15,7 +15,6 @@ return {
 				json = { "prettier" },
 				markdown = { "prettier" },
 				python = { "black" },
-				sql = { "sql_formatter" },
 				dart = { "dart_format" },
 				java = { "clang-format" },
 				kotlin = { "ktfmt" },
