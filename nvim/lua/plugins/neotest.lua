@@ -1,4 +1,4 @@
---TODO
+-- TODO: setup
 return {
 	"nvim-neotest/neotest",
 	dependencies = {

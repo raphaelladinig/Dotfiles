@@ -18,6 +18,7 @@ return {
 		require("mason-tool-installer").setup({
 			ensure_installed = {
 				"lua-language-server",
+                "vim-language-server",
 				"stylua",
 				"clangd",
 				"clang-format",
@@ -36,7 +37,9 @@ return {
                 "java-test",
                 "dart-debug-adapter",
                 "kotlin-language-server",
-                "kotlin-debug-adapter"
+                "kotlin-debug-adapter",
+                "marksman",
+                "vale"
 			},
 		})
 	end,

@@ -25,6 +25,11 @@ return {
 			capabilities = capabilities,
 		})
 
+        lspconfig.vimls.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
 		lspconfig.clangd.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -70,6 +75,11 @@ return {
         })
 
         lspconfig.kotlin_language_server.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        lspconfig.marksman.setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })
