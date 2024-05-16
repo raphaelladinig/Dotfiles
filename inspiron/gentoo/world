@@ -1,3 +1,4 @@
+acct-group/android
 app-admin/doas
 app-admin/pass
 app-admin/sysklogd
@@ -8,6 +9,7 @@ app-emulation/libvirt
 app-emulation/qemu
 app-emulation/virt-manager
 app-emulation/virtiofsd
+app-eselect/eselect-java
 app-eselect/eselect-repository
 app-misc/brightnessctl
 app-misc/cliphist
@@ -16,10 +18,17 @@ app-misc/nwg-look
 app-misc/tmux
 app-portage/gentoolkit
 app-shells/zsh
+app-text/texlive
 dev-db/mariadb
+dev-db/postgresql
 dev-db/sqlite
 dev-embedded/platformio
 dev-games/aseprite
+dev-java/gradle-bin
+dev-java/openjdk-bin
+dev-lang/go
+dev-util/tokei
+dev-util/tree-sitter-cli
 dev-vcs/git
 dev-vcs/lazygit
 gui-apps/grim
@@ -46,6 +55,7 @@ sys-auth/polkit
 sys-auth/seatd
 sys-boot/grub
 sys-boot/os-prober
+sys-devel/clang
 sys-fs/ntfs3g
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
