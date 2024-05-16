@@ -1,3 +1,4 @@
+-- TODO: Setup docker & bash
 return {
 	"williamboman/mason.nvim",
 	dependencies = {
