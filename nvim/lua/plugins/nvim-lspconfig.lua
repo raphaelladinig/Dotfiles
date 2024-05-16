@@ -25,10 +25,10 @@ return {
 			capabilities = capabilities,
 		})
 
-        lspconfig.vimls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
+		lspconfig.vimls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 
 		lspconfig.clangd.setup({
 			on_attach = on_attach,
@@ -69,19 +69,24 @@ return {
 			capabilities = capabilities,
 		})
 
-        lspconfig.dartls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
+		lspconfig.dartls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 
-        lspconfig.kotlin_language_server.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
+		lspconfig.kotlin_language_server.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 
-        lspconfig.marksman.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
+		lspconfig.marksman.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		lspconfig.texlab.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 	end,
 }

@@ -1,3 +1,5 @@
+-- TODO: bun, lua
+
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
@@ -44,12 +46,6 @@ return {
 			args = { "debug_adapter" },
 		}
 
-		dap.adapters.kotlin = {
-			type = "executable",
-			command = "kotlin-debug-adapter",
-			options = { auto_continue_if_many_stopped = false },
-		}
-
 		dap.configurations.cpp = {
 			{
 				type = "codelldb",
@@ -79,23 +75,6 @@ return {
 				name = "Launch flutter",
 				program = "${workspaceFolder}/lib/main.dart",
 				cwd = "${workspaceFolder}",
-			},
-		}
-
-		dap.configurations.kotlin = {
-			{
-				type = "kotlin",
-				request = "launch",
-				name = "Launch kotlin",
-				mainClass = function()
-					local root = vim.fs.find("src", { path = vim.uv.cwd(), upward = true, stop = vim.env.HOME })[1]
-						or ""
-					local fname = vim.api.nvim_buf_get_name(0)
-					return fname:gsub(root, ""):gsub("main/kotlin/", ""):gsub(".kt", "Kt"):gsub("/", "."):sub(2, -1)
-				end,
-				projectRoot = "${workspaceFolder}",
-				jsonLogFile = "",
-				enableJsonLogging = false,
 			},
 		}
 

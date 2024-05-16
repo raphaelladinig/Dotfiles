@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
-		"nvim-treesitter/nvim-treesitter-context",
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -23,8 +22,7 @@ return {
 				"python",
 				"dart",
 				"java",
-				"bash",
-				"kotlin",
+				"latex",
 			},
 			auto_install = false,
 			sync_install = true,
@@ -58,9 +56,6 @@ return {
 					include_surrounding_whitespace = true,
 				},
 			},
-		})
-		require("treesitter-context").setup({
-			max_lines = 2,
 		})
 		require("nvim-ts-autotag").setup({})
 	end,

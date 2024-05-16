@@ -36,10 +36,9 @@ return {
                 "java-debug-adapter",
                 "java-test",
                 "dart-debug-adapter",
-                "kotlin-language-server",
-                "kotlin-debug-adapter",
                 "marksman",
                 "vale",
+                "texlab",
 			},
 		})
 	end,
