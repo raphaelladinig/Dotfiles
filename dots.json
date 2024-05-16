@@ -38,9 +38,6 @@
       ".zshrc": "$HOME/.zshrc"
     },
     {
-      ".profile": "$HOME/.profile"
-    },
-    {
       "fonts/CaskaydiaCove": "$HOME/.local/share/fonts/CaskaydiaCove"
     },
     {

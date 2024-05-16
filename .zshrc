@@ -1,9 +1,6 @@
 source ~/.zplug/init.zsh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
+source ~/.p10k.zsh
+source ~/.env
 
 alias v="nvim"
 alias t="tmux"
