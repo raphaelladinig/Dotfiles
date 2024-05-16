@@ -39,7 +39,7 @@ return {
                 "kotlin-language-server",
                 "kotlin-debug-adapter",
                 "marksman",
-                "vale"
+                "vale",
 			},
 		})
 	end,
