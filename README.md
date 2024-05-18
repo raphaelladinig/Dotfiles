@@ -14,8 +14,8 @@
 First, check out the dotfiles repo
 
 ```
-$ git clone git@github.com/dreamsofautonomy/dotfiles.git
-$ cd dotfiles
+$ git clone https://github.com/raphaelladinig/Dotfiles.git
+$ cd Dotfiles
 ```
 
 then use GNU stow to create symlinks
