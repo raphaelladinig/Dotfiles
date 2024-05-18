@@ -4,10 +4,10 @@
 
 ## Requirements
 
-    - git
-    - GNU stow
-    - CaskaydiaCove Nerdfont
-    - Bibata Modern Cursor
+- git
+- GNU stow
+- CaskaydiaCove Nerdfont
+- Bibata Modern Cursor
 
 ## Installation
 
