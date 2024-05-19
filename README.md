@@ -6,8 +6,6 @@
 
 - git
 - GNU stow
-- CaskaydiaCove Nerdfont
-- Bibata Modern Classic Cursor
 
 ## Installation
 
