@@ -1,15 +1,17 @@
 # env variables
 [[ ! -f ~/.env ]] || source ~/.env
 
+# setup completions
+autoload -Uz compinit
+compinit
+
 # zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
-
-# completion
-autoload -Uz compinit
-compinit
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 # plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -35,11 +37,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# shell integrations
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
+
 # aliases
 alias v='nvim'
 alias t="tmux"
 alias g="lazygit"
-
-# shell integrations
-source <(fzf --zsh) 
-eval "$(zoxide init zsh)"

@@ -15,9 +15,7 @@ return {
 				lualine_a = {
 					"mode",
 				},
-				lualine_b = {
-					"progress",
-				},
+				lualine_b = {},
 				lualine_c = {
 					"diagnostics",
 				},
@@ -25,9 +23,7 @@ return {
 					"diff",
 					"branch",
 				},
-				lualine_y = {
-					"filename",
-				},
+				lualine_y = {},
 				lualine_z = {
 					{
 						"tabs",
