@@ -25,7 +25,6 @@ return {
 
 		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
 
-		-- NOTE: CPP
 		dap.adapters.codelldb = {
 			type = "server",
 			port = "13000",
@@ -48,7 +47,6 @@ return {
 			},
 		}
 
-		-- NOTE: dart
 		dap.adapters.dart = {
 			type = "executable",
 			command = "dart",
@@ -71,14 +69,12 @@ return {
 			},
 		}
 
-		-- NOTE: flutter
 		dap.adapters.flutter = {
 			type = "executable",
 			command = "flutter",
 			args = { "debug_adapter" },
 		}
 
-		-- NOTE: bash
 		dap.adapters.bashdb = {
 			type = "executable",
 			command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
@@ -106,7 +102,6 @@ return {
 			},
 		}
 
-		-- NOTE: nlua
 		dap.configurations.lua = {
 			{
 				type = "nlua",
@@ -118,7 +113,6 @@ return {
 			callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
 		end
 
-		-- NOTE: launch.json
 		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
 
 		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
