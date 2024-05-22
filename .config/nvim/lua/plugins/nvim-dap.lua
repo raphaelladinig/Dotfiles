@@ -24,6 +24,9 @@ return {
 		})
 		dapui.setup()
 
+		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
+        
+        -- NOTE: CPP
 		dap.adapters.codelldb = {
 			type = "server",
 			port = "13000",
@@ -33,19 +36,6 @@ return {
 				args = { "--port", "13000" },
 			},
 		}
-
-		dap.adapters.dart = {
-			type = "executable",
-			command = "dart",
-			args = { "debug_adapter" },
-		}
-
-		dap.adapters.flutter = {
-			type = "executable",
-			command = "flutter",
-			args = { "debug_adapter" },
-		}
-
 		dap.configurations.cpp = {
 			{
 				type = "codelldb",
@@ -59,8 +49,12 @@ return {
 			},
 		}
 
-		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
-
+        -- NOTE: dart
+		dap.adapters.dart = {
+			type = "executable",
+			command = "dart",
+			args = { "debug_adapter" },
+		}
 		dap.configurations.dart = {
 			{
 				type = "dart",
@@ -75,6 +69,41 @@ return {
 				name = "Launch flutter",
 				program = "${workspaceFolder}/lib/main.dart",
 				cwd = "${workspaceFolder}",
+			},
+		}
+	    
+        -- NOTE: flutter
+        dap.adapters.flutter = {
+			type = "executable",
+			command = "flutter",
+			args = { "debug_adapter" },
+		}
+            
+        -- NOTE: bash
+		dap.adapters.bashdb = {
+			type = "executable",
+			command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+			name = "bashdb",
+		}
+		dap.configurations.sh = {
+			{
+				type = "bashdb",
+				request = "launch",
+				name = "Launch file",
+				showDebugOutput = true,
+				pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+				pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+				trace = true,
+				file = "${file}",
+				program = "${file}",
+				cwd = "${workspaceFolder}",
+				pathCat = "cat",
+				pathBash = "/bin/bash",
+				pathMkfifo = "mkfifo",
+				pathPkill = "pkill",
+				args = {},
+				env = {},
+				terminalKind = "integrated",
 			},
 		}
 

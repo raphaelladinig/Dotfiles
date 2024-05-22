@@ -23,6 +23,7 @@ return {
 				"dart",
 				"java",
 				"latex",
+				"bash",
 			},
 			auto_install = false,
 			sync_install = true,
