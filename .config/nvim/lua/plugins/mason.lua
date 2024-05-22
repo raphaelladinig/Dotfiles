@@ -1,4 +1,3 @@
--- TODO: Setup docker & bash
 return {
 	"williamboman/mason.nvim",
 	dependencies = {
@@ -42,6 +41,7 @@ return {
 				"texlab",
 				"bash-language-server",
 				"bash-debug-adapter",
+				"beautysh",
 			},
 		})
 	end,

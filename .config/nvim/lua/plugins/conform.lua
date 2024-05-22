@@ -17,6 +17,7 @@ return {
 				python = { "black" },
 				dart = { "dart_format" },
 				java = { "clang-format" },
+				sh = { "beautysh" },
 			},
 		})
 
