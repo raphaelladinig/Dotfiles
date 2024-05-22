@@ -1,5 +1,3 @@
--- TODO: bun, lua
-
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
@@ -12,6 +10,7 @@ return {
 		},
 		"theHamsta/nvim-dap-virtual-text",
 		"mfussenegger/nvim-dap-python",
+		"jbyuki/one-small-step-for-vimkind",
 	},
 	config = function()
 		local dap = require("dap")
@@ -25,8 +24,8 @@ return {
 		dapui.setup()
 
 		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
-        
-        -- NOTE: CPP
+
+		-- NOTE: CPP
 		dap.adapters.codelldb = {
 			type = "server",
 			port = "13000",
@@ -49,7 +48,7 @@ return {
 			},
 		}
 
-        -- NOTE: dart
+		-- NOTE: dart
 		dap.adapters.dart = {
 			type = "executable",
 			command = "dart",
@@ -71,15 +70,15 @@ return {
 				cwd = "${workspaceFolder}",
 			},
 		}
-	    
-        -- NOTE: flutter
-        dap.adapters.flutter = {
+
+		-- NOTE: flutter
+		dap.adapters.flutter = {
 			type = "executable",
 			command = "flutter",
 			args = { "debug_adapter" },
 		}
-            
-        -- NOTE: bash
+
+		-- NOTE: bash
 		dap.adapters.bashdb = {
 			type = "executable",
 			command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
@@ -107,6 +106,19 @@ return {
 			},
 		}
 
+		-- NOTE: nlua
+		dap.configurations.lua = {
+			{
+				type = "nlua",
+				request = "attach",
+				name = "Attach to running Neovim instance",
+			},
+		}
+		dap.adapters.nlua = function(callback, config)
+			callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
+		end
+
+		-- NOTE: launch.json
 		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
 
 		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")

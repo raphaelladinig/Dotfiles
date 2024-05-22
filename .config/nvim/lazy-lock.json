@@ -44,6 +44,7 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "cb57b07803476ee902c89412aeff219a9a58be13" },
   "nvim-web-devicons": { "branch": "master", "commit": "e37bb1feee9e7320c76050a55443fa843b4b6f83" },
   "oil.nvim": { "branch": "master", "commit": "06a19f77f1a1da37b675635e6f9c5b5d50bcaacd" },
+  "one-small-step-for-vimkind": { "branch": "main", "commit": "fc449295a629926097d14381e8fe34c8a4d07bea" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27" },
   "telescope.nvim": { "branch": "master", "commit": "4aed63995a69e343b068c7469491a8d1592c339f" },
