@@ -11,13 +11,13 @@
 
 First, check out the dotfiles repo
 
-```zsh
+```sh
 git clone https://github.com/raphaelladinig/Dotfiles.git
 cd Dotfiles
 ```
 
 then use stow to create symlinks
 
-```zsh
+```sh
 stow .
 ```
