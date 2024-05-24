@@ -117,7 +117,7 @@ return {
 		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
 
 		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
-		vim.keymap.set("n", "<leader>d", function()
+		vim.keymap.set("n", "<leader>du", function()
 			dapui.toggle()
 		end)
 		vim.keymap.set("n", "<leader>dr", function()

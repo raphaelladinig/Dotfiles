@@ -12,26 +12,16 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		local on_attach = function(client, bufnr)
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.declaration)
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover)
-		end
-
 		require("neodev").setup({})
 		lspconfig.lua_ls.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.vimls.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.clangd.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 			cmd = {
 				"clangd",
@@ -40,57 +30,46 @@ return {
 		})
 
 		lspconfig.html.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.emmet_language_server.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.cssls.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.tailwindcss.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.tsserver.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.pyright.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.dartls.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.kotlin_language_server.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.marksman.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.texlab.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
 		lspconfig.bashls.setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 	end,
