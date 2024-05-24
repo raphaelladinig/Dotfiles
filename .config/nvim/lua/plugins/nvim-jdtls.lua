@@ -21,7 +21,6 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 		local on_attach = function(client, bufnr)
-			vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.declaration)
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
