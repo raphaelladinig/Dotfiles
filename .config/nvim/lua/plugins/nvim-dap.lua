@@ -78,7 +78,7 @@ return {
 
 		dap.adapters.bashdb = {
 			type = "executable",
-			command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+			command = data_dir .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
 			name = "bashdb",
 		}
 		dap.configurations.sh = {
@@ -87,8 +87,8 @@ return {
 				request = "launch",
 				name = "Launch file",
 				showDebugOutput = true,
-				pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
-				pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+				pathBashdb = data_dir .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+				pathBashdbLib = data_dir .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
 				trace = true,
 				file = "${file}",
 				program = "${file}",
