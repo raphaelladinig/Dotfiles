@@ -1,7 +1,7 @@
--- TODO: pio
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
+		"williamboman/mason.nvim",
 		{
 			"rcarriga/nvim-dap-ui",
 			dependencies = {
@@ -16,7 +16,7 @@ return {
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
-		local data_dir = vim.fn.stdpath("data")
+		local mason_dir = vim.fn.stdpath("data") .. "/mason/packages"
 
 		require("nvim-dap-virtual-text").setup({})
 		require("neodev").setup({
@@ -24,14 +24,14 @@ return {
 		})
 		dapui.setup()
 
-		require("dap-python").setup(data_dir .. "/mason/packages/debugpy/venv/bin/python")
+		require("dap-python").setup(mason_dir .. "/debugpy/venv/bin/python")
 
 		dap.adapters.codelldb = {
 			type = "server",
 			port = "13000",
 			host = "127.0.0.1",
 			executable = {
-				command = data_dir .. "/mason/packages/codelldb/codelldb",
+				command = mason_dir .. "/codelldb/codelldb",
 				args = { "--port", "13000" },
 			},
 		}
@@ -78,7 +78,7 @@ return {
 
 		dap.adapters.bashdb = {
 			type = "executable",
-			command = data_dir .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+			command = mason_dir .. "/bash-debug-adapter/bash-debug-adapter",
 			name = "bashdb",
 		}
 		dap.configurations.sh = {
@@ -87,8 +87,8 @@ return {
 				request = "launch",
 				name = "Launch file",
 				showDebugOutput = true,
-				pathBashdb = data_dir .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
-				pathBashdbLib = data_dir .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+				pathBashdb = mason_dir .. "/bash-debug-adapter/extension/bashdb_dir/bashdb",
+				pathBashdbLib = mason_dir .. "/bash-debug-adapter/extension/bashdb_dir",
 				trace = true,
 				file = "${file}",
 				program = "${file}",

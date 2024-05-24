@@ -1,4 +1,3 @@
--- TODO: set up paths via mason
 return {
 	"mfussenegger/nvim-jdtls",
 	dependencies = {
@@ -7,19 +6,19 @@ return {
 	},
 	config = function()
 		local jdtls = require("jdtls")
-		local data_dir = vim.fn.stdpath("data")
+		local mason_dir = vim.fn.stdpath("data") .. "/mason/packages"
 		local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-		local workspace_dir = data_dir .. "jdtls-workspace" .. project_name
+		local workspace_dir = mason_dir .. "jdtls-workspace" .. project_name
 		local bundles = {
 			vim.fn.glob(
-				data_dir
-					.. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.50.0.jar",
+				mason_dir
+					.. "/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
 				1
 			),
 		}
 		vim.list_extend(
 			bundles,
-			vim.split(vim.fn.glob(data_dir .. "/mason/packages/java-test/extension/server/*.jar", 1), "\n")
+			vim.split(vim.fn.glob(mason_dir .. "/java-test/extension/server/*.jar", 1), "\n")
 		)
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -42,11 +41,11 @@ return {
 				"java.base/java.util=ALL-UNNAMED",
 				"--add-opens",
 				"java.base/java.lang=ALL-UNNAMED",
-				"-javaagent:" .. data_dir .. "/mason/packages/jdtls/lombok.jar",
+				"-javaagent:" .. mason_dir .. "/jdtls/lombok.jar",
 				"-jar",
-				vim.fn.glob(data_dir .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+				vim.fn.glob(mason_dir .. "/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 				"-configuration",
-				data_dir .. "/mason/packages/jdtls/config_linux",
+				mason_dir .. "/jdtls/config_linux",
 				"-data",
 				workspace_dir,
 			},
