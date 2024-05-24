@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"williamboman/mason.nvim",
 		"nvim-telescope/telescope.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		"folke/neodev.nvim",
@@ -88,9 +89,9 @@ return {
 			capabilities = capabilities,
 		})
 
-        lspconfig.bashls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
+		lspconfig.bashls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 	end,
 }
