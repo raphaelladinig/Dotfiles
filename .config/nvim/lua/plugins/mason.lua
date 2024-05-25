@@ -42,6 +42,8 @@ return {
 				"bash-language-server",
 				"bash-debug-adapter",
 				"beautysh",
+				"json-lsp",
+				"lemminx",
 			},
 		})
 	end,

@@ -72,5 +72,13 @@ return {
 		lspconfig.bashls.setup({
 			capabilities = capabilities,
 		})
+
+        lspconfig.jsonls.setup({
+            capabilities = capabilities,
+        })
+
+        lspconfig.lemminx.setup({
+            capabilities = capabilities,
+        })
 	end,
 }

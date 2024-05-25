@@ -31,8 +31,6 @@ return {
 			},
 			auto_install = false,
 			sync_install = true,
-			ignore_install = {},
-			modules = {},
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
