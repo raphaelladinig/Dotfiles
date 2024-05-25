@@ -8,7 +8,7 @@ return {
 		local jdtls = require("jdtls")
 		local mason_dir = vim.fn.stdpath("data") .. "/mason/packages"
 		local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-		local workspace_dir = mason_dir .. "jdtls-workspace" .. project_name
+		local workspace_dir = vim.fn.stdpath("data") .. "/jdtls-workspace/" .. project_name
 		local bundles = {
 			vim.fn.glob(
 				mason_dir

@@ -27,6 +27,7 @@ return {
                 "json",
                 "diff",
                 "xml",
+                "java",
 			},
 			auto_install = false,
 			sync_install = true,

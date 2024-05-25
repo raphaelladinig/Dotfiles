@@ -116,8 +116,15 @@ return {
 
 		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
 
-		vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
-		vim.keymap.set("n", "<leader>du", function()
+		vim.fn.sign_define("DapBreakpoint", { text = "" })
+		vim.fn.sign_define("DapBreakpointCondition", { text = "" })
+		vim.fn.sign_define("DapBreakpointRejected", { text = "" })
+		vim.fn.sign_define("DapLogPoint", { text = "" })
+		vim.fn.sign_define("DapStopped", { text = "" })
+
+		vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>")
+		vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>")
+		vim.keymap.set("n", "<leader>dt", function()
 			dapui.toggle()
 		end)
 		vim.keymap.set("n", "<leader>dr", function()
