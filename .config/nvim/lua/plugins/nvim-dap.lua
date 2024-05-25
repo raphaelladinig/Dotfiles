@@ -114,13 +114,16 @@ return {
 			callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
 		end
 
-		require("dap.ext.vscode").load_launchjs("./launch.json", { codelldb = { "cpp" } })
+		local filetypes = {
+			codelldb = { "cpp" },
+		}
+		require("dap.ext.vscode").load_launchjs("./launch.json", filetypes)
 
-		vim.fn.sign_define("DapBreakpoint", { text = "" })
-		vim.fn.sign_define("DapBreakpointCondition", { text = "" })
-		vim.fn.sign_define("DapBreakpointRejected", { text = "" })
-		vim.fn.sign_define("DapLogPoint", { text = "" })
-		vim.fn.sign_define("DapStopped", { text = "" })
+		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
+		vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition" })
+		vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected" })
+		vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint" })
+		vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped" })
 
 		vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>")
 		vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>")

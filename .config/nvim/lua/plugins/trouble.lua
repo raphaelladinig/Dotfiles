@@ -1,4 +1,3 @@
--- TODO: keybinds
 return {
 	"folke/trouble.nvim",
 	branch = "dev",
