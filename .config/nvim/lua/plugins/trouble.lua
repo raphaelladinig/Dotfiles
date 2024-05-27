@@ -4,6 +4,6 @@ return {
 	config = function()
 		require("trouble").setup({})
 
-		vim.keymap.set("n", "<leader>t", "<cmd>Trouble diagnostics toggle<cr>")
+		vim.keymap.set("n", "<leader>D", "<cmd>Trouble diagnostics toggle<cr>")
 	end,
 }
