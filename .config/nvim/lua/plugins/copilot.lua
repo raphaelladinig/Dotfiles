@@ -9,6 +9,7 @@ return {
 						next = "<C-j>",
 						prev = "<C-k>",
 					},
+                    auto_trigger = true
 				},
 			})
 		end,
