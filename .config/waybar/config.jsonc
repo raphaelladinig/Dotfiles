@@ -1,0 +1,44 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["network", "cpu", "memory", "wireplumber", "battery", "clock"],
+  "hyprland/workspaces": {},
+  "hyprland/window": {
+    "max-length": 50,
+    "tooltip": false
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+    "format-disconnected": "",
+    "max-length": 50,
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}%  ",
+    "tooltip": false
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "{volume}%  ",
+    "format-icons": [" ", " ", " "],
+    "tooltip": false
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  }
+}

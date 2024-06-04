@@ -1,0 +1,32 @@
+* {
+  font-family: CaskaydiaCove Nerd Font;
+  color: #ffffff;
+  font-size: 14pt;
+}
+
+window#waybar {
+  background: #000000;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+}
+
+#workspaces button {
+  margin: 0em 0.5em 0.125em 0.5em;
+  border: 0em;
+  background-color: transparent;
+}
+
+#workspaces button.active {
+  border-bottom: 0.125em solid #ffffff;
+  border-radius: 0em;
+  margin-bottom: 0em;
+}
+
+#network, #cpu, #memory, #wireplumber, #battery, #clock {
+  margin: 0em 0.5em;
+  border-bottom: 0.125em solid #ffffff;
+}
