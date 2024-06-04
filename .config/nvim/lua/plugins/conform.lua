@@ -13,6 +13,7 @@ return {
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				json = { "prettier" },
+				jsonc = { "prettier" },
 				markdown = { "prettier" },
 				python = { "black" },
 				dart = { "dart_format" },
