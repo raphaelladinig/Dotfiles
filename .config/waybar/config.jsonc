@@ -2,6 +2,7 @@
   "layer": "top",
   "position": "top",
   "height": 35,
+  "spacing": 10,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["network", "cpu", "memory", "wireplumber", "battery", "clock"],
@@ -38,7 +39,7 @@
     "tooltip": false
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%H:%M}  ",
     "tooltip": false
   }
 }
