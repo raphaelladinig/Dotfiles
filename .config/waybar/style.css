@@ -8,6 +8,10 @@ window#waybar {
   background: #000000;
 }
 
+#workspaces {
+    margin-left: 0.5em;
+}
+
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
@@ -15,7 +19,7 @@ window#waybar {
 }
 
 #workspaces button {
-  margin: 0em 0.5em 0.125em 0.5em;
+  margin-bottom: 0.125em;
   border: 0em;
   background-color: transparent;
 }
@@ -27,6 +31,6 @@ window#waybar {
 }
 
 #network, #cpu, #memory, #wireplumber, #battery, #clock {
-  margin: 0em 0.5em;
+  margin-right: 0.5em;
   border-bottom: 0.125em solid #ffffff;
 }
