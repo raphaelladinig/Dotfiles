@@ -39,3 +39,31 @@ if vim.env.TERM == "xterm-kitty" then
 		end,
 	})
 end
+
+-- save theme to file
+vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+	callback = function()
+		local theme = vim.g.colors_name
+		local file = vim.env.HOME .. "/.theme"
+		local f, err = io.open(file, "w")
+		if f then
+			f:write(theme)
+			f:close()
+		else
+			print("Failed to open file: " .. err)
+		end
+	end,
+})
+
+-- load theme from file
+local theme_file = vim.fn.expand("$HOME") .. "/.theme"
+if vim.fn.filereadable(theme_file) == 1 then
+    local theme = vim.fn.system("cat " .. theme_file)
+    if theme ~= "" then
+        vim.cmd("colorscheme " .. theme)
+    else
+        vim.cmd("colorscheme default")
+    end
+else
+    vim.cmd("colorscheme default")
+end
