@@ -30,10 +30,6 @@ window#waybar {
   margin-bottom: 0em;
 }
 
-#network, #cpu, #memory, #wireplumber, #battery, #clock {
-  border-bottom: 0.125em solid #ffffff;
-}
-
 #clock {
     margin-right: 0.5em;
 }
