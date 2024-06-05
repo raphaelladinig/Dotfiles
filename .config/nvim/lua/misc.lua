@@ -3,7 +3,6 @@ vim.api.nvim_create_autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
 		vim.opt_local.cursorline = true
 	end,
 })
-
 vim.api.nvim_create_autocmd({ "WinLeave" }, {
 	callback = function()
 		vim.opt_local.cursorline = false

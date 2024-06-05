@@ -1,3 +1,8 @@
+# load kitty theme
+if [ "$TERM" = "xterm-kitty" ]; then
+    kitty @ --to $KITTY_LISTEN_ON set-colors -c $HOME/base16-kitty/colors/$(cat $HOME/.theme).conf
+fi
+
 # env variables
 [[ ! -f ~/.env ]] || source ~/.env
 
