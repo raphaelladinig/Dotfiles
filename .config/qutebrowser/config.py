@@ -1,7 +1,6 @@
-import os
-from urllib.request import urlopen
 from qutebrowser.config.configfiles import ConfigAPI
 from qutebrowser.config.config import ConfigContainer
+import theme
 
 config: ConfigAPI = config  # type: ignore[name-defined]
 c: ConfigContainer = c  # type: ignore[name-defined]
@@ -28,17 +27,8 @@ c.fonts.default_family = "CaskaydiaCove Nerd Font Mono"
 c.fonts.default_size = "15pt"
 c.fonts.hints = "10pt CaskaydiaCove Nerd Font Mono"
 
-# theme
-if not os.path.exists(config.configdir / "theme.py"):
-    theme = "https://raw.githubusercontent.com/catppuccin/qutebrowser/main/setup.py"
-    with urlopen(theme) as themehtml:
-        with open(config.configdir / "theme.py", "a") as file:
-            file.writelines(themehtml.read().decode("utf-8"))
-if os.path.exists(config.configdir / "theme.py"):
-    import theme
-
-    theme.setup(c, "mocha", True)
-
 # keybindings
-config.bind(',v', 'spawn mpv {url}')
-config.bind(',V', 'hint links spawn mpv {hint-url}')
+config.bind(",v", "spawn mpv {url}")
+config.bind(",V", "hint links spawn mpv {hint-url}")
+
+theme.setup(c)
