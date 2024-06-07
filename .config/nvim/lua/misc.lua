@@ -40,7 +40,7 @@ if vim.env.TERM == "xterm-kitty" then
 			end
 
 			local cmd = "kitten @ --to unix:%s"
-				.. " set-colors -c "
+				.. " set-colors -a -c "
 				.. vim.env.HOME
 				.. "/base16-kitty/colors/"
 				.. vim.g.colors_name
