@@ -29,7 +29,13 @@ if vim.env.TERM == "xterm-kitty" then
 		callback = function()
 			local socket_files = io.popen("ls /tmp/kitty-*")
 
+			if vim.fn.filereadable(vim.env.HOME .. "/base16-kitty/colors/" .. vim.g.colors_name .. ".conf") == 0 then
+				print("No kitty theme found for " .. vim.g.colors_name)
+				return
+			end
+
 			if socket_files == nil then
+				print("No kitty sockets found")
 				return
 			end
 
@@ -49,12 +55,13 @@ if vim.env.TERM == "xterm-kitty" then
 	})
 end
 
--- save theme to file
+-- save & load theme
+local theme_file = vim.fn.expand("$HOME") .. "/.theme"
+
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 	callback = function()
 		local theme = vim.g.colors_name
-		local file = vim.env.HOME .. "/.theme"
-		local f, err = io.open(file, "w")
+		local f, err = io.open(theme_file, "w")
 		if f then
 			f:write(theme)
 			f:close()
@@ -64,8 +71,6 @@ vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 	end,
 })
 
--- load theme from file
-local theme_file = vim.fn.expand("$HOME") .. "/.theme"
 if vim.fn.filereadable(theme_file) == 1 then
 	local theme = vim.fn.system("cat " .. theme_file)
 	if theme ~= "" then
