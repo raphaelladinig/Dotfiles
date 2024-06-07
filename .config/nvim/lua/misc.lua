@@ -23,7 +23,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- update kitty theme
+-- update kitty theme on color scheme change (only base16-kitty)
 if vim.env.TERM == "xterm-kitty" then
 	vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 		callback = function()
