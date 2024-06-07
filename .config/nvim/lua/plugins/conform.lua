@@ -22,7 +22,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>mp", function()
+		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			conform.format()
 		end)
 	end,

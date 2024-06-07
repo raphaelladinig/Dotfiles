@@ -16,13 +16,17 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
 		dependencies = {
 			"zbirenbaum/copilot.lua",
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
-			require("CopilotChat").setup()
+            local chat = require("CopilotChat")
+            chat.setup()
+
+            vim.keymap.set({"n", "v"}, "<leader>cc", "<cmd>CopilotChat<cr>")
+            vim.keymap.set("v", "<leader>cf", "<cmd>CopilotChatFix<cr>")
+            vim.keymap.set("v", "<leader>ce", "<cmd>CopilotChatExplain<cr>")
 		end,
 	},
 }

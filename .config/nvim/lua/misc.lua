@@ -32,9 +32,7 @@ if vim.env.TERM == "xterm-kitty" then
 				.. "/base16-kitty/colors/"
 				.. vim.g.colors_name
 				.. ".conf"
-			local socket = vim.fn.expand("$KITTY_LISTEN_ON")
-
-			vim.fn.system(cmd:format(socket))
+			vim.fn.system(cmd:format(vim.fn.expand("$KITTY_LISTEN_ON")))
 		end,
 	})
 end
