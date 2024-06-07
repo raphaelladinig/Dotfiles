@@ -23,13 +23,13 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- update kitty theme on color scheme change (only base16-kitty)
+-- update kitty theme on color scheme change (only catppuccin)
 if vim.env.TERM == "xterm-kitty" then
 	vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 		callback = function()
 			local socket_files = io.popen("ls /tmp/kitty-*")
 
-			if vim.fn.filereadable(vim.env.HOME .. "/base16-kitty/colors/" .. vim.g.colors_name .. ".conf") == 0 then
+			if vim.fn.filereadable(vim.env.HOME .. "/.config/kitty/themes/" .. vim.g.colors_name .. ".conf") == 0 then
 				print("No kitty theme found for " .. vim.g.colors_name)
 				return
 			end
@@ -42,7 +42,7 @@ if vim.env.TERM == "xterm-kitty" then
 			local cmd = "kitten @ --to unix:%s"
 				.. " set-colors -a -c "
 				.. vim.env.HOME
-				.. "/base16-kitty/colors/"
+				.. "/.config/kitty/themes/"
 				.. vim.g.colors_name
 				.. ".conf"
 
@@ -56,7 +56,7 @@ if vim.env.TERM == "xterm-kitty" then
 end
 
 -- save & load theme
-local theme_file = vim.fn.expand("$HOME") .. "/.theme"
+local theme_file = vim.fn.expand("$HOME") .. "/.flavour"
 
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 	callback = function()
