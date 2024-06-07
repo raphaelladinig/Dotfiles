@@ -27,7 +27,7 @@ end
 if vim.env.TERM == "xterm-kitty" then
 	vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 		callback = function()
-			local cmd = "kitty @ --to %s set-colors -c "
+			local cmd = "kitten @ --to %s set-colors -c "
 				.. vim.env.HOME
 				.. "/base16-kitty/colors/"
 				.. vim.g.colors_name
