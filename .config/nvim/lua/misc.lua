@@ -27,12 +27,24 @@ end
 if vim.env.TERM == "xterm-kitty" then
 	vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 		callback = function()
-			local cmd = "kitten @ --to %s set-colors -c "
+			local socket_files = io.popen("ls /tmp/kitty-*")
+
+			if socket_files == nil then
+				return
+			end
+
+			local cmd = "kitten @ --to unix:%s"
+				.. " set-colors -c "
 				.. vim.env.HOME
 				.. "/base16-kitty/colors/"
 				.. vim.g.colors_name
 				.. ".conf"
-			vim.fn.system(cmd:format(vim.fn.expand("$KITTY_LISTEN_ON")))
+
+			for socket_file in socket_files:lines() do
+				vim.fn.system(cmd:format(socket_file))
+			end
+
+			socket_files:close()
 		end,
 	})
 end
@@ -55,12 +67,12 @@ vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 -- load theme from file
 local theme_file = vim.fn.expand("$HOME") .. "/.theme"
 if vim.fn.filereadable(theme_file) == 1 then
-    local theme = vim.fn.system("cat " .. theme_file)
-    if theme ~= "" then
-        vim.cmd("colorscheme " .. theme)
-    else
-        vim.cmd("colorscheme default")
-    end
+	local theme = vim.fn.system("cat " .. theme_file)
+	if theme ~= "" then
+		vim.cmd("colorscheme " .. theme)
+	else
+		vim.cmd("colorscheme default")
+	end
 else
-    vim.cmd("colorscheme default")
+	vim.cmd("colorscheme default")
 end
