@@ -21,7 +21,6 @@ c.session.lazy_restore = True
 c.content.pdfjs = True
 c.scrolling.bar = "never"
 c.tabs.tooltips = False
-c.tabs.favicons.show = "never"
 c.tabs.indicator.width = 0
 c.fonts.default_family = "CaskaydiaCove Nerd Font Mono"
 c.fonts.default_size = "15pt"
