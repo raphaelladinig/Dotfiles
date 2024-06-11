@@ -4,7 +4,7 @@
   "height": 35,
   "spacing": 10,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [],
   "modules-right": [
     "network",
     "cpu",
@@ -14,10 +14,6 @@
     "clock",
   ],
   "hyprland/workspaces": {},
-  "hyprland/window": {
-    "max-length": 50,
-    "tooltip": false,
-  },
   "network": {
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%)  ",
