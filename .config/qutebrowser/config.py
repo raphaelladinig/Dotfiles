@@ -25,6 +25,7 @@ c.tabs.indicator.width = 0
 c.fonts.default_family = "CaskaydiaCove Nerd Font Mono"
 c.fonts.default_size = "15pt"
 c.fonts.hints = "10pt CaskaydiaCove Nerd Font Mono"
+c.prompt.radius = 0
 
 # keybindings
 config.bind(",v", "spawn mpv {url}")
